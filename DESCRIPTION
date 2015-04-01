@@ -1,0 +1,17 @@
+Package: cafs
+Type: Package
+Title: R Implementation of Combined Assessment of Function and Survival
+Version: 0.1
+Date: 2015-03-31
+Author: Paul Manser
+Maintainer: Paul Manser <paulmanser26@gmail.com>
+Description: More about what it does (maybe more than one line)
+License: MIT
+Depends: R (>= 3.0),
+         survival,
+         survsim,
+         rms
+Collate: generics.R
+         CafsSet.R
+         compute_cafs_scores.R
+         gw_test.R
