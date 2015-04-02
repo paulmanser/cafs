@@ -15,7 +15,7 @@ gw_test <- function(x, permutation_test = FALSE, n_perm = 1e3) { # currently onl
   
   if (permutation_test){
     test_stat <- .gw_stat(x)
-    p_val <- 1 - pnorm(abs(test_stat))
+    p_val <- 2*(1 - pnorm(abs(test_stat)))  # compute 2-sided p-value
     perm.tmp <- numeric(n_perm)
     tmp <- x
     
