@@ -4,6 +4,9 @@ gw_test <- function(x, permutation_test = FALSE, n_perm = 1e3) { # currently onl
   if (ncol(x) != 3 | !identical(colnames(x), c("trt_group", "cafs_scores", "cafs_ranks")))
     stop("'x' must be a data.frame output from the 'compute_cafs_scores' function 
          with 3 columns named 'trt_group', 'cafs_scores', and 'cafs_ranks', respectively")
+  
+  if (!is(x$trt_group, 'factor'))
+    stop("The 'trt_group' column of x must be a factor")
     
   if (!permutation_test){ 
     
