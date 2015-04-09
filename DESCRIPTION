@@ -14,3 +14,5 @@ Collate: generics.R
          CafsSet.R
          compute_cafs_scores.R
          gw_test.R
+         surv_sim.R
+         long_sim.R
