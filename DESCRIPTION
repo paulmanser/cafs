@@ -16,3 +16,4 @@ Collate: generics.R
          gw_test.R
          surv_sim.R
          long_sim.R
+         cafs_power.R
