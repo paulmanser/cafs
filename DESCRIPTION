@@ -9,7 +9,8 @@ Description: More about what it does (maybe more than one line)
 License: MIT
 Depends: R (>= 3.0),
          survival,
-         rms
+         rms,
+         mvtnorm
 Collate: generics.R
          CafsSet.R
          compute_cafs_scores.R
