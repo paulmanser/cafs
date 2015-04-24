@@ -1,9 +1,10 @@
 
 
-cafs_power <- function(alpha = 0.05, n.trt = 100, n.pbo = 100, study.length = 18, dropout = .25, 
-                       cont.sd = 9.1, pbo.slope = 1.1, reduce.decline = .25,
-                       med.surv.pbo = 24, med.surv.trt = 24 + 6, sim = FALSE, n.sim = 200){
+cafs_power <- function(alpha = 0.05, n.trt = 130, n.pbo = 130, study.length = 18, dropout = .25, 
+                       frs.sd = 9.1, pbo.slope = 1.1, reduce.decline = .25,
+                       med.surv.pbo = 24, med.surv.trt = 24 + 6){
   
+
   # ~65 % for n = 170, alpha = .05, study.length = 18, sd = 8.1
   
 #   n.trt <- n.trt * (1-dropout)
@@ -38,7 +39,7 @@ cafs_power <- function(alpha = 0.05, n.trt = 100, n.pbo = 100, study.length = 18
   pi_t3 <- (q2/p2)^2  * (1 + x1/y1 - x2/y2) #
   
   
-  delta <- abs((mean.trt - mean.pbo) / (sqrt(2)*cont.sd)) #
+  delta <- abs((mean.trt - mean.pbo) / (sqrt(2)*frs.sd)) #
   
   
   pi_x1 <- pnorm(delta) # 
@@ -61,6 +62,6 @@ cafs_power <- function(alpha = 0.05, n.trt = 100, n.pbo = 100, study.length = 18
   pnorm((sigma0/sigma1)*(qnorm(alpha/2)) + abs(mu1-mu0)/sigma1)
   
   
-# }
+}
   
   
