@@ -7,6 +7,10 @@ gw_test <- function(x, permutation_test = FALSE, n_perm = 1e3) { # currently onl
   
   if (!is(x$trt_group, 'factor'))
     stop("The 'trt_group' column of x must be a factor")
+  
+  if (nlevels(object@trt_group) != 2) {
+    stop("'trt_group' must be a factor with 2 levels")
+  }
     
   if (!permutation_test){ 
     
@@ -18,7 +22,7 @@ gw_test <- function(x, permutation_test = FALSE, n_perm = 1e3) { # currently onl
   
   if (permutation_test){
     test_stat <- .gw_stat(x)
-    p_val <- 2*(1 - pnorm(abs(test_stat)))  # compute 2-sided p-value
+    p_val <- 2 * (1 - pnorm(abs(test_stat)))  # compute 2-sided p-value
     perm.tmp <- numeric(n_perm)
     tmp <- x
     
