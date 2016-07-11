@@ -67,7 +67,7 @@ setMethod("get_trt_group", "CafsSet", function(x) x@trt_group)
 setMethod("show", "CafsSet", function(object) {
   cat("A CafsSet object \n")
   cat(nrow(object@baseline_diff), "subjects \n")
-  cat("Differences from baseline bserved at", ncol(object@baseline_diff), "time points \n")
+  cat("Differences from baseline observed at", ncol(object@baseline_diff), "time points \n")
   cat(sum(object@survival[, 2]==1), "patients experienced event \n")
 })
 
