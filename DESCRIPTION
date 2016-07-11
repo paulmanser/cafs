@@ -18,3 +18,4 @@ Collate: generics.R
          surv_sim.R
          long_sim.R
          cafs_power.R
+         cafs_filter.R
