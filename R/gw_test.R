@@ -42,9 +42,9 @@ gw_test <- function(x, permutation_test = FALSE, n_perm = 1e3) { # currently onl
   
   n <- nrow(x)
   trt <- levels(x$trt_group)[1]
-  m <- sum(x$trt_group == trt)
+  m <- sum(as.character(x$trt_group) == trt)
   
-  t <- sum( (x$trt_group == trt) * x$cafs_scores)
+  t <- sum( (as.character(x$trt_group) == trt) * x$cafs_scores)
   v <- sum(x$cafs_scores^2) * ( m*(n-m)/(n*n-1) )
   
   return(t/sqrt(v)) 
