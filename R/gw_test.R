@@ -8,7 +8,7 @@ gw_test <- function(x, permutation_test = FALSE, n_perm = 1e3) { # currently onl
   if (!is(x$trt_group, 'factor'))
     stop("The 'trt_group' column of x must be a factor")
   
-  if (nlevels(object@trt_group) != 2) {
+  if (nlevels(x$trt_group) != 2) {
     stop("'trt_group' must be a factor with 2 levels")
   }
     
