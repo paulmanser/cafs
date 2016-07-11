@@ -23,10 +23,6 @@ setClass("CafsSet",
     stop("Length of 'trt_group' must be the same as number of rows in 'baseline_diff'")
   }
   
-  if (nlevels(object@trt_group) != 2) {
-    stop("'trt_group' must be a factor with 2 levels")
-  }
-  
   if (nrow(object@survival) != nrow(object@baseline_diff)) {
     stop("Length of 'survival' must be equal to number of rows in 'baseline_diff'")
   }
@@ -67,7 +63,7 @@ setMethod("get_trt_group", "CafsSet", function(x) x@trt_group)
 setMethod("show", "CafsSet", function(object) {
   cat("A CafsSet object \n")
   cat(nrow(object@baseline_diff), "subjects \n")
-  cat("Differences from baseline bserved at", ncol(object@baseline_diff), "time points \n")
+  cat("Differences from baseline observed at", ncol(object@baseline_diff), "time points \n")
   cat(sum(object@survival[, 2]==1), "patients experienced event \n")
 })
 
